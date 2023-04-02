@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #name, #city, #mobile, #age, #address, #email, #job {
+            font-weight:bold;   
+        }
+        #next {
+            display:none;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Click the button to display an alert box.</p>
+
+    <!-- Nút nhập thông tin -->
+    <button onclick="notify()">Try it</button> 
+
+    <!-- Các thông tin sẽ được hiển thị sau khi nhập thông tin-->
+    <p id="name"></p>
+    <p id="city"></p>
+    <p id="mobile"></p>
+    <p id="age"></p>
+    <p id="address"></p>
+    <p id="email"></p>
+    <p id="job"></p>
+
+    <!-- Nút hiển thị sau khi nhập đủ thông tin-->
+    <div id="next"> 
+        <button> Bước tiếp theo </button>
+    </div>
+    <script>
+        // Tạo code điều kiện email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        // hàm nhập thông tin người dùng
+        function notify() { 
+            alert("Chào mừng bạn đến với ứng dụng JavaScript đầu tiên");
+            let name = prompt("Hãy nhập tên của bạn");
+            document.getElementById("name").innerHTML = "Tên: " + name;
+            let city = prompt("Hãy nhập thành phố bạn đang sống");
+            document.getElementById("city").innerHTML = "Thành phố: " + city;
+
+            let mobile = prompt("Hãy nhập số điện thoại của bạn"); 
+            for(let lenMobile= mobile.length;lenMobile < 10;){  // Điều kiện bắt buộc sđt phải ít nhất 10 có chữ
+                mobile = prompt('Hãy nhập lại sđt của bạn, ít nhất 10 chữ số')
+                lenMobile = mobile.length
+                console.log(lenMobile)
+            } console.log(typeof mobile)
+            document.getElementById("mobile").innerHTML = "Số điện thoại: " + mobile;
+
+            // nhập năm sinh có điều kiện
+            let now = new Date();
+
+            let age = prompt("Hãy nhập năm sinh:"); 
+            for(age;age > now.getFullYear();) { //Điều kiện bắt buộc năm sinh phải lớn hơn năm hiện tại
+                age = prompt("Hãy nhập lại năm sinh");
+            }
+            document.getElementById("age").innerHTML =  now.getFullYear() - age + " tuổi";
+             
+            let address = prompt("Hãy nhập địa chỉ hiện nay của bạn");
+            document.getElementById("address").innerHTML = "Địa chỉ: " + address;
+
+            let email = prompt("Hãy nhập email của bạn");
+            for(let testEmail = emailRegex.test(email);!testEmail;){ //Điều kiện bắt buộc phải là định dạng email
+                email = prompt("Hãy nhập email của bạn");
+                testEmail = emailRegex.test(email)
+                console.log(testEmail)
+            }
+            document.getElementById("email").innerHTML = "Email: " + email;
+            let job = prompt("Hãy nhập Công việc hiện nay của bạn");
+            document.getElementById("job").innerHTML = "Công việc: " + job;
+
+            // hiển thị nút tiếp theo
+            let next = document.getElementById("next");
+                next.style.display = "block";
+        } 
+    </script>
+</body>
+</html>
