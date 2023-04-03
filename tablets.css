@@ -1,0 +1,16 @@
+* {box-sizing: border-box;}
+
+body {
+    background: linear-gradient(-50deg, #afdabf, #ffb3df, #f18960);
+}
+
+h1 {
+    color:#570603;
+    text-align:center;
+    background: rgb(224, 247, 143);
+    height: 40px;
+    
+}
+
+
+

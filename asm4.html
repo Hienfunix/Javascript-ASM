@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASM4</title>
+    <link rel="stylesheet" type="text/css" href="laptop.css">
+    <link rel="stylesheet" type="text/css" href="laptop.css" media="screen and (min-width:992px)">
+    <link rel="stylesheet" type="text/css" href="tablets.css" media="screen and (min-width:768px) and (max-width: 991px)">
+    <link rel="stylesheet" type="text/css" href="mobile.css" media="screen and (max-width:767px)">
+    <script src="JVS.js"> </script>
+</head>
+<body >
+    
+    <h1> My News 
+        <svg id="symbol-search"  onclick ="document.getElementById('modal').style.display = 'flex'" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-search" viewBox="-2 -2 18 18" >
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg> 
+        <div id="loader"></div>
+    </h1>    
+    <div id = "news">
+    </div>
+    
+    <div id="modal">
+        <div id="modal-overlay"onclick =" document.getElementById('modal').style.display = 'none'"> </div>
+ 
+        <div id="modal-body" > 
+            <div class="modal-inner">
+               <div id = "full-search">
+                    <label id = "lb-search" for = "search"> Keywords </label>
+                    <input id = "ip-search" name ="search">
+                    <button id="bt-search" onclick="searching()"> search </button>  
+                <div> 
+                
+                <div id = "full-from">
+                    <label id = "lb-from" for = "from"> From</label>
+                    <input id = "ip-from" name ="from" type="date">
+                </div>
+                <div id = "full-to">    
+                    <label id = "lb-to" for = "to"> To </label>
+                    <input id = "ip-to" name ="to" type="date" > 
+                </div>
+                
+            </div>
+    
+        </div>
+    </div> 
+
+</body>
+</html>
