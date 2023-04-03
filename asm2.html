@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASM2</title>
+    <link rel="stylesheet" type="text/css" href="laptop.css">
+    <link rel="stylesheet" type="text/css" href="laptop.css" media="screen and (min-width:992px)">
+    <link rel="stylesheet" type="text/css" href="tablets.css" media="screen and (min-width:768px) and (max-width: 991px)">
+    <link rel="stylesheet" type="text/css" href="mobile.css" media="screen and (max-width:767px)">"
+    <script src="JVS.js"> </script>
+</head>
+<body>
+    <h1> Class Marksheet </h1>
+    <!-- về nhà sẽ chỉnh sửa lại cho form lưu vào file -->
+    <form> 
+        <div class = "formA">
+            <label class = "lb" for="fullName">Họ tên </label> 
+            <input class = "ip" id="fullName" type="text" name="fullName">    </br>
+        </div>
+
+        <div class = "formA">
+            <label class = "lb" for="math"> Điểm Toán </label> 
+            <input class = "ip" id="math" type="number" name="math">    </br>
+        </div class = "formA">
+
+        <div class = "formA">
+            <label class = "lb" for="physics"> Điểm Lý </label> 
+            <input class = "ip" id="physics" type="number" name="physics">    </br>
+        </div>
+
+        <div class = "formA">
+            <label class = "lb" for="chemistry"> Điểm Hóa </label> 
+            <input class = "ip" id="chemistry" type="number" name="chemistry"/>    </br>
+        </div>
+    </form>
+
+    <div class = "bt" id="bt1">
+        
+        <button id = "addtb" onclick= "point()"> Nhập </button> 
+    </div>
+
+    <table id = "tb">
+        <tr>
+            <th id="column1"> STT </th>
+            <th id="column2"> Họ tên </th>
+            <th id="column3"> Toán </th>
+            <th id="column4"> Lý </th>
+            <th id="column5"> Hóa </th>
+            <th id="column6"> Điểm Trung bình </th>
+            <th id="column7"> Xếp loại </th>
+        </tr>
+    </table>
+    <div class="fake1"> </div>
+        <div class = "bt" id="bt2">
+            <button onclick="gpa()"> Tính điểm trung bình </button> 
+        </div>
+        <div class = "bt" id="bt3">
+            <button onclick="goodStudent()"> Xác định học sinh giỏi </button> 
+        </div>
+        <div class = "bt" id="bt4">
+            <button onclick="rank()"> Xếp loại </button> 
+        </div>
+        <div class = "bt" id="bt5">
+            <button onclick="bestScore()"> HS cao điểm nhất </button> 
+        </div>
+    <div class="fake2"> </div>
+    <div id="bestAll">Điểm trung bình cao nhất: </div>
+</body>
+</html>
